@@ -204,7 +204,7 @@ from matplotlib import pyplot as plt
 
 from sequence.utils.encoding import *
 from sequence.utils.encoding import polarization
-from sequence.utils.quantum_state import QuantumState
+from sequence.kernel.quantum_state import FreeQuantumState
 ```
 
 Qubits are mathematical interpretations that can be used to explain and build quantum circuits over different types of quantum computers. They can take different shapes and physical formats. Depending on the technology a qubit may be a photon, a trapped ion, a superconductor, a semiconductor quantum dot, etc. If you want to become more familiar with different types of qubits, I would recommend starting with this QuTech video: [https://youtu.be/oZacBmOwvz0](https://youtu.be/oZacBmOwvz0)
@@ -223,7 +223,7 @@ class Photon():
                 self.encoding_type = encoding_type
                 if self.encoding_type["name"] == "single_atom":
                     self.memory = None
-                self.quantum_state = QuantumState()
+                self.quantum_state = FreeQuantumState()
                 self.quantum_state.state = quantum_state
                 self.qstate_key = None
                 self.is_null = False
@@ -260,7 +260,7 @@ That's a lot of code at once! So let's analyze it bit by bit!
                 self.encoding_type = encoding_type
                 if self.encoding_type["name"] == "single_atom":
                     self.memory = None
-                self.quantum_state = QuantumState()
+                self.quantum_state = FreeQuantumState()
                 self.quantum_state.state = quantum_state
                 
                 #administrative lines
@@ -328,7 +328,7 @@ from matplotlib import pyplot as plt
 
 from sequence.utils.encoding import *
 from sequence.utils.encoding import polarization
-from sequence.utils.quantum_state import QuantumState
+from sequence.kernel.quantum_state import FreeQuantumState
         
 class Photon():
     def __init__(self, name, wavelength=0, location=None, encoding_type=polarization,
@@ -340,7 +340,7 @@ class Photon():
         self.encoding_type = encoding_type
         if self.encoding_type["name"] == "single_atom":
             self.memory = None
-        self.quantum_state = QuantumState()
+        self.quantum_state = FreeQuantumState()
         self.quantum_state.state = quantum_state
         self.qstate_key = None
         self.is_null = False
